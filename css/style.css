@@ -1,0 +1,76 @@
+fieldset .acctLegend {
+  padding-left: 20%; }
+  fieldset .acctLegend span {
+    float: right;
+    margin-right: 20%; }
+
+.active {
+  color: #3a801c;
+  font-weight: bold; }
+
+.activeBlue {
+  color: #378de0;
+  font-weight: bold; }
+
+.inactive {
+  color: #7b7b7b !important;
+  font-weight: normal !important; }
+
+.btn-login {
+  background-color: #59B2E0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  border-color: #59B2E6 !important; }
+  .btn-login:hover, .btn-login:focus {
+    color: #fff;
+    background-color: #53A3CD;
+    border-color: #53A3CD !important; }
+
+.btn-register {
+  background-color: #1CB94E;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  border-color: #1CB94A !important; }
+  .btn-register:hover, .btn-register:focus {
+    color: #fff;
+    background-color: #1CA347;
+    border-color: #1CA347 !important; }
+
+.btn.disabled, .btn[disabled] {
+  border-color: gray !important;
+  background-color: gray !important; }
+
+.eventList {
+  font-weight: bold; }
+
+.eventsBox {
+  border: 1px solid;
+  box-shadow: 10px 10px 5px #888888;
+  padding: 10px; }
+
+@media screen and (max-width: 767px) {
+  .eventsBox, #event_form {
+    overflow-x: scroll !important; } }
+
+/* sm */
+@media screen and (min-width: 768px) {
+  .eventsBox, #event_form {
+    overflow-x: hidden !important; } }
+
+/* md */
+@media screen and (min-width: 992px) {
+  .eventsBox, #event_form {
+    overflow-x: hidden !important; } }
+
+/* lg */
+@media screen and (min-width: 1200px) {
+  .eventsBox, #event_form {
+    overflow-x: hidden !important; } }
