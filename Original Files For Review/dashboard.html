@@ -1,0 +1,169 @@
+<div class="container">
+    <form class="well form-horizontal" action="" onsubmit="return false"  id="event_form" ng-if="formCtrl.showEvents">
+        <fieldset>
+            <legend style="text-align: center" class="activeBlue">Create Event!</legend>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="ename">Event Name *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-fire"></i></span>
+                        <input id="ename" name="ename" type="text" class="form-control" ng-model="formCtrl.event.name" autofocus required placeholder="Event Name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="etype">Type of Event *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-fire"></i></span>
+                        <input id="etype" name="etype" list="eventlist" class="form-control" ng-model="formCtrl.event.type" required placeholder="Type of Event">
+                        <datalist id="eventlist">
+                            <option value="Party"></option>
+                            <option value="Technical Meet"></option>
+                            <option value="Business Meet"></option>
+                            <option value="Dinner"></option>
+                            <option value="Career Fair"></option>
+                            <option value="Lunch"></option>
+                            <option value="Brunch"></option>
+                            <option value="Netwokring Event"></option>
+                            <option value="Tournament"></option>
+                            <option value="Coding Competition"></option>
+                            <option value="Competition"></option>
+                            <option value="Seminar"></option>
+                            <option value="Conference"></option>
+                            <option value="Teaching Event"></option>
+                            <option value="Charity Event"></option>
+                            <option value="VIP Party"></option>
+                            <option value="Press Conference"></option>
+                            <option value="Award Ceremony"></option>
+                            <option value="Workshop"></option>
+                            <option value="Colloquium"></option>
+                            <option value="Annual Meeting"></option>
+                            <option value="Expo"></option>
+                            <option value="Exhibition"></option>
+                            <option value="Fair"></option>
+                            <option value="Fundraisers"></option>
+                            <option value="Reception"></option>
+                            <option value="Orientation"></option>
+                        </datalist>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="hname">Event Host *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" name="hname" id="hname" placeholder="Host Name" ng-model="formCtrl.event.host" autocomplete="name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="stdate">Event Start Date & Time *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <input id="stdate" class="form-control" name="stdate" type="datetime-local" ng-if="!formCtrl.unsafe" ng-model="formCtrl.event.start" placeholder="Date & Time" required>
+                        <input id="stdate" class="form-control" name="stdate" type="text" ng-if="formCtrl.unsafe" ng-model="formCtrl.event.start" placeholder="dd/mm/yyyy HH:MM" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="eddate">Event End Date & Time *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <input id="eddate" class="form-control" name="eddate" type="datetime-local" ng-if="!formCtrl.unsafe" ng-model="formCtrl.event.end" placeholder="Date & Time" required>
+                        <input id="eddate" class="form-control" name="eddate" type="text" ng-if="formCtrl.unsafe" ng-model="formCtrl.event.end" placeholder="dd/mm/yyyy HH:MM" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="guestlist">Guest List</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <textarea id="guestlist" rows="4" cols="50" name="glist" class="form-control" ng-model="formCtrl.event.guests" placeholder="Enter Guest List"> </textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="geocomplete">Location *</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                        <input id="geocomplete" class="form-control" name="eloc" ng-blur="formCtrl.checkLocation()" ng-keyup="formCtrl.checkLocation()" type="text" placeholder="Type in an address" size="90" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="message">Optional Message</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
+                        <textarea id="message" rows="8" cols="50" class="form-control" ng-model="formCtrl.event.message" placeholder="Optional Message"> </textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="esubmit"></label>
+                <div class="col-md-4">
+                    <input type="submit" value="Create Event" name="dob" id="esubmit" ng-click="formCtrl.addEvent()" ng-disabled="!formCtrl.event.name || !formCtrl.event.type || !formCtrl.event.host
+                    || !formCtrl.event.start || !formCtrl.event.end || formCtrl.checkLocation()" class="form-control btn btn-login">
+                    <span>Please Fill All Fields With * To Enable Button</span>
+                    <input style="margin-top: 10px" type="button" value="Logout" ng-click="formCtrl.logout()" class="form-control btn btn-login">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <div class="row eventsBox" ng-if="!formCtrl.showEvents">
+        <fieldset>
+            <legend style="text-align: center" class="active">Events <span ng-if="$root.user">Created by {{user.name}} </span></legend>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Event Type</th>
+                            <th>Event Host</th>
+                            <th>Event Start Date</th>
+                            <th>Event End Date</th>
+                            <th>Event Guest List</th>
+                            <th>Event Location</th>
+                            <th>Message to Guests</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="event in formCtrl.allEvents">
+                            <td>{{event.name}}</td>
+                            <td>{{event.type}}</td>
+                            <td>{{event.host}}</td>
+                            <td>{{event.start}}</td>
+                            <td>{{event.end}}</td>
+                            <td>{{event.guests}}</td>
+                            <td>{{event.location}}</td>
+                            <td>{{event.message}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4">
+                    <input type="button" value="Create Another Event" ng-click="formCtrl.createNewEvent()" class="form-control btn btn-login">
+                    <input style="margin-top: 10px" type="button" value="Logout" ng-click="formCtrl.logout()" class="form-control btn btn-login">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
