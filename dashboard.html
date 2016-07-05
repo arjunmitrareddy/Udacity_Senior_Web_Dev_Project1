@@ -67,8 +67,8 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                        <input id="stdate" class="form-control" name="estdate" type="datetime-local" ng-if="!formCtrl.unsafe" ng-model="formCtrl.event.start" placeholder="Date & Time" required>
-                        <input id="stdate" class="form-control" name="estdate" type="text" ng-if="formCtrl.unsafe" ng-model="formCtrl.event.start" placeholder="mm/dd/yyyy 00:00 AM" required>
+                        <input id="stdate" class="form-control" name="stdate" type="datetime-local" ng-if="!formCtrl.unsafe" ng-model="formCtrl.event.start" placeholder="Date & Time" required>
+                        <input id="stdate" class="form-control" name="stdate" type="text" ng-if="formCtrl.unsafe" ng-model="formCtrl.event.start" placeholder="dd/mm/yyyy HH:MM" required>
                     </div>
                 </div>
             </div>
@@ -78,8 +78,8 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                        <input id="eddate" class="form-control" name="eenddate" type="datetime-local" ng-if="!formCtrl.unsafe" ng-model="formCtrl.event.end" placeholder="Date & Time" required>
-                        <input id="eddate" class="form-control" name="eenddate" type="text" ng-if="formCtrl.unsafe" ng-model="formCtrl.event.end" placeholder="mm/dd/yyyy 00:00 AM" required>
+                        <input id="eddate" class="form-control" name="eddate" type="datetime-local" ng-if="!formCtrl.unsafe" ng-model="formCtrl.event.end" placeholder="Date & Time" required>
+                        <input id="eddate" class="form-control" name="eddate" type="text" ng-if="formCtrl.unsafe" ng-model="formCtrl.event.end" placeholder="dd/mm/yyyy HH:MM" required>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                        <input id="geocomplete" class="form-control" ng-blur="formCtrl.checkLocation()" ng-keyup="formCtrl.checkLocation()" type="text" placeholder="Type in an address" size="90" />
+                        <input id="geocomplete" class="form-control" name="eloc" ng-blur="formCtrl.checkLocation()" ng-keyup="formCtrl.checkLocation()" type="text" placeholder="Type in an address" size="90" />
                     </div>
                 </div>
             </div>
@@ -115,12 +115,11 @@
             </div>
 
             <div class="form-group">
-                <label class="col-md-4 control-label" for="lsubmit"></label>
+                <label class="col-md-4 control-label" for="esubmit"></label>
                 <div class="col-md-4">
-                    <input type="button" value="Create Event" name="dob" id="lsubmit" ng-click="formCtrl.addEvent()" ng-disabled="!formCtrl.event.name || !formCtrl.event.type || !formCtrl.event.host
+                    <input type="submit" value="Create Event" name="dob" id="esubmit" ng-click="formCtrl.addEvent()" ng-disabled="!formCtrl.event.name || !formCtrl.event.type || !formCtrl.event.host
                     || !formCtrl.event.start || !formCtrl.event.end || formCtrl.checkLocation()" class="form-control btn btn-login">
                     <span>Please Fill All Fields With * To Enable Button</span>
-
                     <input style="margin-top: 10px" type="button" value="Logout" ng-click="formCtrl.logout()" class="form-control btn btn-login">
                 </div>
             </div>

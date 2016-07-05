@@ -31,9 +31,32 @@ gulp.task('format', function () {
         .pipe($.jshint.reporter('fail'));
 });
 
+gulp.task('copy-fonts', function() {
+        return gulp.src('./bower_components/bootstrap/fonts/*')
+            .pipe(gulp.dest('./fonts'))
+});
+
+gulp.task('optimize', ['copy-fonts'], function() {
+    console.log(" \n *** Minifying and Copying Assets *** \n");
+    var assets = $.useref({searchPath: './'});
+    var cssFilter = $.filter('**/*.css', {restore: true});
+    var jsFilter = $.filter('**/*.js', {restore: true});
+    return gulp
+        .src('./index.html')
+        .pipe($.plumber())
+        .pipe(assets)
+        .pipe(cssFilter)
+        .pipe($.csso())
+        .pipe(cssFilter.restore)
+        .pipe(jsFilter)
+        .pipe($.uglify())
+        .pipe(jsFilter.restore)
+        .pipe(gulp.dest('./'))
+});
 
 
 gulp.task('wire-dep', function () {
+    console.log(" \n *** Injecting Dependencies *** \n");
     var bower = {
             json: require('./bower.json'),
             directory: './bower_components',
@@ -43,11 +66,12 @@ gulp.task('wire-dep', function () {
     var injectJsFiles = [
         './**/*.module.js',
         './**/*.config.js',
-        './**/*.controller.js'
+        './**/*.controller.js',
+        '!node_modules/**/*.js'
     ];
 
     return gulp
-        .src('./index.html')
+        .src('./preIndex.html')
         .pipe(wiredep({
             bowerJson: bower.json,
             directory: bower.directory,
@@ -60,6 +84,7 @@ gulp.task('wire-dep', function () {
         .pipe($.inject(gulp.src('./css/style.css'), {
             ignorePath : '/application/', addRootSlash: false
         }))
+        .pipe($.rename('index.html'))
         .pipe(gulp.dest('./'));
 });
 
