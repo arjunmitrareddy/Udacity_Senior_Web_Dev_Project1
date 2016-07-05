@@ -1,0 +1,37 @@
+{
+  "name": "senior_web_dev",
+  "description": "Udacity Senior Web Developer Nanodegree",
+  "main": "index.js",
+  "authors": [
+    "Arjun Mitra Reddy Donthala"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "jquery": "^3.0.0",
+    "bootstrap": "^3.3.6",
+    "bootstrapvalidator": "^0.5.3",
+    "firebase": "^3.1.0",
+    "angularfire": "^2.0.1",
+    "geocomplete": "^1.7.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css",
+        "less/bootstrap.less"
+      ]
+    }
+  }
+}

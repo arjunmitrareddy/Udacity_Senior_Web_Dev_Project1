@@ -1,0 +1,28 @@
+{
+  "name": "senior_web_dev",
+  "version": "1.0.0",
+  "description": "Udacity Senior Web Developer Nanodegree",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arjun Mitra Reddy Donthala",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "browser-sync": "^2.13.0",
+    "eslint": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-eslint": "^3.0.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "wiredep": "^4.0.0"
+  }
+}
