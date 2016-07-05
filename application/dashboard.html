@@ -127,11 +127,10 @@
         </fieldset>
     </form>
 
-    <form class="well form-horizontal" ng-if="!formCtrl.showEvents" action="" onsubmit="return false">
+    <div class="row eventsBox" ng-if="!formCtrl.showEvents">
         <fieldset>
-            <legend style="text-align: center" class="active">Events Created by {{user.name}}</legend>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <legend style="text-align: center" class="active">Events <span ng-if="$root.user">Created by {{user.name}} </span></legend>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <table class="table table-bordered">
                         <thead>
                         <tr>
@@ -158,7 +157,6 @@
                         </tr>
                         </tbody>
                     </table>
-                </div>
             </div>
             <div class="form-group">
                 <div class="col-md-4">
@@ -167,6 +165,6 @@
                 </div>
             </div>
         </fieldset>
-    </form>
+    </div>
 </div>
 

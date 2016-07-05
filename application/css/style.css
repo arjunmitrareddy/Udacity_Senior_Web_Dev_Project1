@@ -51,7 +51,26 @@ fieldset .acctLegend {
 .eventList {
   font-weight: bold; }
 
-.successfulSignup {
-  color: green !important;
-  font-weight: bold !important;
-  font-size: 20px !important; }
+.eventsBox {
+  border: 1px solid;
+  box-shadow: 10px 10px 5px #888888;
+  padding: 10px; }
+
+@media screen and (max-width: 767px) {
+  .eventsBox, #event_form {
+    overflow-x: scroll !important; } }
+
+/* sm */
+@media screen and (min-width: 768px) {
+  .eventsBox, #event_form {
+    overflow-x: hidden !important; } }
+
+/* md */
+@media screen and (min-width: 992px) {
+  .eventsBox, #event_form {
+    overflow-x: hidden !important; } }
+
+/* lg */
+@media screen and (min-width: 1200px) {
+  .eventsBox, #event_form {
+    overflow-x: hidden !important; } }
