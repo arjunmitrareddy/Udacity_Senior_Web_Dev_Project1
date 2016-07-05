@@ -25,6 +25,9 @@
     "bootstrapvalidator": "^0.5.3",
     "geocomplete": "^1.7.0"
   },
+  "resolutions": {
+    "jquery": "~3.0.0"
+  },
   "overrides": {
     "bootstrap": {
       "main": [
@@ -37,6 +40,9 @@
       "main": [
         "dist/css/bootstrapValidator.css"
       ]
+    },
+    "geocomplete" : {
+      "main" : null
     }
   }
 }
