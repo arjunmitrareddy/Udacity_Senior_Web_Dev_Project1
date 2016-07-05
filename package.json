@@ -4,7 +4,7 @@
   "description": "Udacity Senior Web Developer Nanodegree",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "npm i -g http-server"
   },
   "author": "Arjun Mitra Reddy Donthala",
   "license": "MIT",
