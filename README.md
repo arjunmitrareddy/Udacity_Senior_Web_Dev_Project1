@@ -3,5 +3,5 @@ Meet-Up Event Planner
 
 Instructions for Running: <br/>
 1) npm install <br/>
-2) cd application <br/>
+2) bower install <br/>
 3) http-server -o <br/>
