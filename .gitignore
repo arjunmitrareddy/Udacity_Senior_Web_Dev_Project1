@@ -1,5 +1,4 @@
 node_modules
-application/bower_components
 .idea/
 database.rules.json
 firebase.json

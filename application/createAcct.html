@@ -1,6 +1,6 @@
 <div class="container">
     <span class=successfulSignup" style="margin-right: 50%; color: green; font-weight: bold; font-size: 20px" ng-if="formCtrl.successMsg">{{formCtrl.successMsg}}</span>
-    <form class="well form-horizontal" id="register_form" ng-if="!formCtrl.showLog">
+    <form class="well form-horizontal" id="register_form" ng-if="!formCtrl.showLog" action="" onsubmit="return false">
         <fieldset>
             <legend class="acctLegend" id="regLegend" ng-click="formCtrl.toggleReg()" ng-class="{active: !formCtrl.showRegSpanClass}">Sign Up! <span ng-click="formCtrl.toggleLog()" ng-class="{inactive: !formCtrl.showRegSpanClass}">Login!</span></legend>
             <div class="form-group">
@@ -53,7 +53,7 @@
             </div>
         </fieldset>
     </form>
-    <form class="well form-horizontal"  id="login_form" ng-if="formCtrl.showLog">
+    <form class="well form-horizontal"  id="login_form" ng-if="formCtrl.showLog" action="" onsubmit="return false">
         <fieldset>
             <legend class="acctLegend" id="logLegend" ng-click="formCtrl.toggleReg()" ng-class="{inactive: !formCtrl.showLogSpanClass}">Sign Up! <span ng-class="{activeBlue: !formCtrl.showLogSpanClass}" ng-click="formCtrl.toggleLog()">Login!</span></legend>
             <div class="form-group">
