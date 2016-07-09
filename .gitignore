@@ -7,7 +7,4 @@ firebase.json
 .bowerrc
 .firebaserc
 css
-forms.config.js
-forms.controller.js
-forms.module.js
 preIndex.html
